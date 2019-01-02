@@ -1,0 +1,7 @@
+[information]
+exe: inst/linux-rtm.gcc-pthreads/bin/server 
+shown_name: parsec3-netstreamcluster
+launch_script: "run-hpc.sh 10 native"
+arguments: ""
+
+[environment]

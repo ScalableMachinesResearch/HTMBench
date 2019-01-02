@@ -1,0 +1,7 @@
+export TSX_ROOT=$(pwd)
+export TSX_INPUT=$TSX_ROOT/../tsx_input
+
+export LD_LIBRARY_PATH=$TSX_ROOT/lib/rtm
+export PATH=$TSX_ROOT/script:$PATH
+ulimit -s unlimited
+

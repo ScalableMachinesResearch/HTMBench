@@ -1,0 +1,6 @@
+[information]
+exe: bin/RTM-skiplist 
+shown_name: synchrobench-skiplist
+arguments: "-t $THREADS$ -d 100000 -u 20 -i 16000 -r 32000"
+
+[environment]

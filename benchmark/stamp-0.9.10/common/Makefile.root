@@ -1,0 +1,22 @@
+
+all: origin rtm
+
+origin:
+	make -f Makefile.lock clean
+	rm -rf build_$@
+	make -f Makefile.lock default
+	mkdir -p build_$@
+	mv $(TARGET).lock build_$@/$(TARGET)
+	make -f Makefile.lock clean
+rtm:
+	make -f Makefile.htm_ibm clean
+	rm -rf build_$@
+	make -f Makefile.htm_ibm default
+	mkdir -p build_$@
+	mv $(TARGET).htm_ibm build_$@/$(TARGET)
+	make -f Makefile.htm_ibm clean
+clean:
+	make -f Makefile.lock clean
+	make -f Makefile.htm_ibm clean
+	rm -rf build_origin build_rtm
+

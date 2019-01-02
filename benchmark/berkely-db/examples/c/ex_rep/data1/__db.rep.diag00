@@ -1,0 +1,6 @@
+[1498766872:384493][104379/140333807527744] ex_rep_base: Check view.  Exist 0, cb 0
+[1498766872:411704][104379/140333807527744] ex_rep_base: New master gen 1, egen 2
+[1498766872:428908][104379/140333807527744] ex_rep_base: data1 rep_send_message: msgv = 9 logv 23 gen = 1 eid -1, type newmaster, LSN [1][28]  nobuf
+[1498766872:532212][104379/140333743851264] ex_rep_base: data1 rep_process_message: msgv = 9 logv 23 gen = 1 eid 2, type update_req, LSN [0][0] 
+[1498766872:538556][104379/140333743851264] ex_rep_base: Walk_dir: File __db.rep.system at 0x7fa1fe63b020: pgsize 1024, max_pgno 3
+[1498766872:538602][104379/140333743851264] ex_rep_base: data1 rep_send_message: msgv = 9 logv 23 gen = 1 eid -1, type update, LSN [1][5648]  nobuf

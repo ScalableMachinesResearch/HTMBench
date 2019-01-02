@@ -1,0 +1,8 @@
+[information]
+exe: server/qwsv
+shown_name: quaketm-qwsv
+launch_script: "./run-hpc.sh"
+arguments: ""
+parallel: omp
+
+[environment]

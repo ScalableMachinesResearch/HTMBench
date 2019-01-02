@@ -1,0 +1,164 @@
+      ____     _    _       _       _    _    _____
+     / __ \   | |  | |     / \     | |  / /  |  ___|
+    | |  | |  | |  | |    / _ \    | |_/ /   | |___    _______   ___  ___
+    | |  | |  | |  | |   / ___ \   |  _ (    |  ___|  |__   __| |   \/   |
+    | |__| |  | |__| |  / /   \ \  | | \ \   | |___      | |    | |\__/| |
+     \_____ \  \____/  /_/     \_\ |_|  \_\  |_____|     |_|    |_|    |_|
+           \/
+                        Transactional Quake Server
+                            Version 1.0 BETA
+                     Barcelona Supercomputing Center
+                          http://www.bscmsrc.eu
+
+
+
+This document explains how to setup and use QuakeTM, 
+the transactional version of Quakeworld, the multiplayer
+version of the first person shooter game Quake I
+released by ID Software under the GPL license.
+
+If you use QuakeTM for your research please reference 
+the following conference paper:
+
+	Vladimir Gajinov, Ferad Zyulkyarov, Adrián Cristal, Osman S. Unsal, Eduard Ayguadé, Tim Harris, Mateo Valero, "QuakeTM: Parallelizing a Complex Serial Application Using Transactional Memory". 23rd ACM/SIGARCH International Conference on Supercomputing (ICS'09) - Jun 2009 
+
+QuakeTM consists of three applications:
+	- the server
+	- the TraceBot client, for running traces
+	- the VideoClient client, for visual testing and 
+	  production of traces
+
+QuakeTM package comes with two sets of prerecorded traces
+which are ready to be used with two different maps.
+
+Thank you for using QuakeTM!
+
+
+System Requirements
+--------------------
+
+Please note that QuakeTM is developed for Linux.
+
+The server was compiled and tested in Ubuntu 
+and Suse Linux systems. It was compiled using
+the prototype edition of the Intel STM compiler 
+version 3.0
+
+TraceBot was compiled with gcc 4.3.2 and tested in
+Ubuntu and Suse Linux systems.
+
+VideoClient was compiled with gcc 4.3.2 and tested 
+only in Ubuntu Linux. It needs a support for OpenGL. 
+Please note that we do not hold the responsability for
+failure to compile VideoClient due to the problems 
+regarding OpenGL libraries.
+
+
+Use instructions
+-----------------
+
+In the following text we give detailed information 
+on how to use QuakeTM package and how to change configurations 
+of individual applications.
+
+
+********************************************************
+TRACE RECORDING
+********************************************************
+
+SERVER
+===============================================
+
+1. Set macro definitions
+
+tm_macros.h
+----------------------
+Set serial server execution:
+	make run=serial
+	
+sv_main.c
+----------------------
+Define FRAMETIME to be 0.03
+
+sys.h
+----------------------
+Define PROCSPEED according to the processor (core) speed of the machine running the server.
+
+2. Compile and run the binary without any command line parameters
+
+
+
+CLIENT
+================================================
+
+- Compile and run VideoClient. Set the command line parameter -save_trace
+- When you are done with producing the traces stop the client using Quake menu.
+- Test each trace separately: run VideoClient with -run_trace command line parameter. 
+  Be sure that you leave only one trace file in the Trace directory before testing.
+
+
+
+
+********************************************************
+RUNNING BENCHMARK
+********************************************************
+
+SERVER
+===============================================
+
+
+1. Macro definitions
+
+The behaviour of the server is controle with a rich set of macros which can be grouped as following:
+
+synchronization:		DO_LOCK			DO_TM
+granularity:			DO_GLOBAL		DO_COARSE	DO_FINE
+nesting:				DO_NESTED
+frame stage:			READ_PACKETS	PHYSICS		REPLY_STAGE
+debug_stage:			READ_PACKETS	PHYSICS		REPLY_STAGE		GENERAL
+debug level:			NONE			LOW			MEDIUM			HIGH
+
+Makefile comes with a set of predefined settings for these macros. In order to compile with a predefined setup invoke make as
+	make run= { global | lock_coarse | lock_fine | lock_tm | tm_coarse | tm_fine | tm_fine_nested }
+
+Here we give a brief explanation of above settings:
+global			only one huge transaction that caries the entire processing of a single packet.
+lock_coarse		8 critical sections protected with a global lock.
+lock_fine		fine grained lock implementation.
+lock_tm			8 critical sections each protected with transaction as well as a global lock. Used only
+				to measure the overhead of the multithreaded exection (instrumentation overhead).
+tm_coarse		8 critical sections protected with transactions.
+tm_fine			fine grained tm implemetnation. Nesting is avoided by the macro definitions.
+tm_fine_nested	fine grained tm implemetnation where nesting is handled by the tm runtime system.
+
+
+sv_main.c
+----------------------
+Define FRAMETIME to be 0.1 (or any other value which is sufficient for the frame execution with transactions)
+
+sys.h
+----------------------
+Define PROCSPEED according to the processor (core) speed of the machine running the server.
+
+2. Compile and run the binary. Command line parameters of interest are:
+	-threads n		The number of threads to run in parallel.
+	-frames n 		Run for n frames after which the server stops execution.
+	-start_frame n	Set the frame number from which to start measuring the performance.
+	-end_frame n	Set the frame number when to stop measuring the performance. 
+					The server stops execution and prints the performance values.
+  Do not use -frames with -end_frame parameter at the same time.
+
+3. It is possible to change the map using the server.cfg file in the id1 directory. 
+   Remember to change the traces for the client according to the map.
+
+
+CLIENT
+================================================
+
+- For this purpose use TraceBot client feeding it with the prerecorded traces. 
+- Run the clients on different machine than the one which is running the server. 
+- Use clients.sh script to run multiple clients at once.
+- In the id1 directory there is a file connet.rc. Change the ip address for the server.
+
+TraceBot doesn't use graphics or sound and can be run in many instances at the same time on the same machine.
+

@@ -1,0 +1,8 @@
+[information]
+exe: ex_thread
+shown_name: berkeley-db-ex-thread
+launch_script: run-hpc.sh
+arguments: ""
+
+[environment]
+

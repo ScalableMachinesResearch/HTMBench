@@ -1,0 +1,18 @@
+INC=-I../common
+CFLAGS=-fopenmp -g -O3 -fno-inline $(INC)
+LDFLAGS=-lgomp -lm
+
+SRCS := main.c util.c ../common/parboil.c
+BASES := $(basename $(SRCS))
+OBJS := $(addsuffix .o,$(BASES))
+CC=gcc
+
+histo: $(OBJS)
+	$(CC) -o $@ $^ $(LDFLAGS) $(CFLAGS)
+%.o : %.c
+	$(CC) -c -o $@ $< $(CFLAGS)
+../common/%.o : ../common/%.c
+		$(CC) -c -o $@ $< $(CFLAGS)
+
+clean:
+	rm -rf $(OBJS) histo

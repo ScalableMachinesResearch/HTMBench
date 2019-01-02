@@ -1,0 +1,7 @@
+[information]
+exe: RAYTRACE 
+shown_name: splash2-raytrace
+arguments: "-p$THREADS$ -m896 -a1024 balls4.env"
+parallel: pthread
+
+[environment]

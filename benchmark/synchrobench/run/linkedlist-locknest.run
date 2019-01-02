@@ -1,0 +1,6 @@
+[information]
+exe: bin/RTM-linkedlist-locknest
+shown_name: synchrobench-linkedlist-locknest
+arguments: "-t $THREADS$ -d 100000 -u 20 -i 16000 -r 32000"
+
+[environment]

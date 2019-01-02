@@ -1,0 +1,14 @@
+[information]
+exe: SSCA2-opt
+shown_name: SSCA2
+arguments: "$THREADS$ 19"
+
+[environment]
+TXN_GRAN_1: 3
+TXN_GRAN_2: 8
+
+[sampling]
+cycles?precise--2 : 20000000
+MEM_UOPS_RETIRED?ALL_STORES : 10000000
+RTM_RETIRED?ABORTED : 3000
+RTM_RETIRED?COMMIT : 100000

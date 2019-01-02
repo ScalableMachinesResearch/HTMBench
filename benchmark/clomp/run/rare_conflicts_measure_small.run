@@ -1,0 +1,9 @@
+[information]
+exe: build_rtm_small/clomp
+shown_name: clomp_rare_conflicts
+arguments: "$THREADS$ 1 x32 d6144 256 Adjacent 3 1 0 6 1000 150"
+parallel: omp
+
+[environment]
+GOMP_SPINCOUNT: 100000
+

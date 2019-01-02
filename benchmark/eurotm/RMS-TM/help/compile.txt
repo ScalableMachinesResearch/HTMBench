@@ -1,0 +1,17 @@
+----------------------------------------------------------------------------
+COMPILATION:
+----------------------------------------------------------------------------
+
+APR:
+cd $DMHOME/src/MineBench/Apriori/
+make
+
+
+ScalParC:
+cd $DMHOME/src/MineBench/ScalParC/
+make
+
+
+utility_mine: 
+cd $DMHOME/src/MineBench/UtilityMine/
+make

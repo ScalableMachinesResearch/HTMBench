@@ -1,0 +1,14 @@
+CPP = g++
+
+
+RTM_DIR = ${TSX_ROOT}/lib/rtm
+
+SRC_DIR = ./src
+
+TARGET_DIR = ./target
+OBJ_DIR = ./target/obj
+
+LDFLAGS = -lrt -lpthread -L$(RTM_DIR) -lrtm
+
+CPPFLAGS = -O3 -g -I$(RTM_DIR)
+

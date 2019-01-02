@@ -1,0 +1,6 @@
+[information]
+exe: build_rtm/genome
+shown_name: stamp-genome
+arguments: "-g65536 -s256 -n67108864 -t$THREADS$"
+
+[environment]

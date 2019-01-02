@@ -1,0 +1,7 @@
+[information]
+exe: WATER-NSQUARED 
+shown_name: splash2-water-nsquared
+launch_script: "run-hpc.sh"
+arguments: ""
+
+[environment]

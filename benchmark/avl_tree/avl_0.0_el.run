@@ -1,0 +1,9 @@
+[information]
+exe: rtm-el/a.out
+shown_name: avl_tree
+arguments: "$THREADS$ 32768 0.5 0.0 2000000"
+parallel: omp
+
+[environment]
+LD_LIBRARY_PATH: $TSX_ROOT$/benchmark/avl_tree/lib_rw
+

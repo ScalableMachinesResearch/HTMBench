@@ -1,0 +1,5 @@
+The pipe line:
+acceptor -> load -> seg(v) -> extract(v) -> vec(v) -> rank(v) -> out
+
+The number of threads in those stages marked with v is determined by the argument.
+Otherwise, it is 1. 

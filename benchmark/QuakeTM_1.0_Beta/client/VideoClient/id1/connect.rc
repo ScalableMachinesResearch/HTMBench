@@ -1,0 +1,3 @@
+#Put the ip address of the server in the following form
+connect 127.0.1.1:27500
+

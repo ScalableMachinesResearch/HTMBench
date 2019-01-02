@@ -1,0 +1,19 @@
+[1498766872:378436][104380/140125882320704] ex_rep_base: Check view.  Exist 0, cb 0
+[1498766872:406463][104380/140125882320704] ex_rep_base: rep_start: Found old version log 23
+[1498766872:406611][104380/140125882320704] ex_rep_base: data2 rep_send_message: msgv = 9 logv 23 gen = 0 eid -1, type newclient, LSN [0][0]  nogroup nobuf
+[1498766872:468382][104380/140125818644224] ex_rep_base: data2 rep_process_message: msgv = 9 logv 23 gen = 1 eid 2, type newmaster, LSN [1][28] 
+[1498766872:492112][104380/140125818644224] ex_rep_base: Election done; egen 1
+[1498766872:492132][104380/140125818644224] ex_rep_base: Updating gen from 0 to 1 from master 2
+[1498766872:515009][104380/140125818644224] ex_rep_base: egen: 2. rep version 9
+[1498766872:515085][104380/140125818644224] ex_rep_base: No commit or ckp found.  Truncate log.
+[1498766872:531247][104380/140125818644224] ex_rep_base: data2 rep_send_message: msgv = 9 logv 23 gen = 1 eid 2, type update_req, LSN [0][0]  nobuf
+[1498766872:531333][104380/140125818644224] ex_rep_base: data2 rep_send_message: msgv = 9 logv 23 gen = 1 eid 2, type update_req, LSN [0][0]  nobuf
+[1498766872:533993][104380/140125818644224] ex_rep_base: Start election nsites 2, ack 2, priority 100
+[1498766872:534022][104380/140125818644224] ex_rep_base: Election thread owns egen 2
+[1498766872:534034][104380/140125818644224] ex_rep_base: Setting priority 0, unelectable, due to internal init/recovery
+[1498766872:549179][104380/140125818644224] ex_rep_base: Tallying VOTE1[0] (1, 2)
+[1498766872:549206][104380/140125818644224] ex_rep_base: Beginning an election
+[1498766872:549268][104380/140125818644224] ex_rep_base: data2 rep_send_message: msgv = 9 logv 23 gen = 1 eid -1, type vote1, LSN [1][0]  nobuf
+[1498766874:551940][104380/140125818644224] ex_rep_base: Election finished in 2.017907732 sec
+[1498766874:551964][104380/140125818644224] ex_rep_base: Election done; egen 3
+[1498766874:551972][104380/140125818644224] ex_rep_base: Ended election with  -30974, e_th 0, egen 3, flag 0x802a, e_fl 0x0, lo_fl 0x0

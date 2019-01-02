@@ -1,0 +1,8 @@
+[information]
+exe: build_rtm/vacation
+shown_name: stamp-vacation_high
+arguments: "-n4 -q60 -u90 -r4194304 -t16777216 -c$THREADS$"
+parallel: omp
+
+[environment]
+

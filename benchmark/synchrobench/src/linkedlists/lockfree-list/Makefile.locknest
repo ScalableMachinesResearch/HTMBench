@@ -1,0 +1,27 @@
+ROOT = ../../..
+
+include $(ROOT)/common/Makefile.common
+
+BINS = $(BINDIR)/$(STM)-linkedlist-locknest
+CFLAGS += -std=gnu89 -DLOCKNEST
+
+.PHONY:	all clean
+
+all: clean main
+linkedlist.o:
+	$(CC) $(CFLAGS) -c -o $(BUILDIR)/linkedlist.o linkedlist.c
+
+harris.o: linkedlist.h linkedlist.o
+	$(CC) $(CFLAGS) -c -o $(BUILDIR)/harris.o harris.c
+
+intset_locknest.o: linkedlist.h harris.h
+	$(CC) $(CFLAGS) -c -o $(BUILDIR)/intset_locknest.o intset_locknest.c
+
+test.o: linkedlist.h harris.h intset.h
+	$(CC) $(CFLAGS) -c -o $(BUILDIR)/test.o test.c
+
+main: linkedlist.o harris.o intset_locknest.o test.o $(TMILB)
+	$(CC) $(CFLAGS) $(BUILDIR)/linkedlist.o $(BUILDIR)/harris.o $(BUILDIR)/intset_locknest.o $(BUILDIR)/test.o -o $(BINS)  $(LDFLAGS)
+
+clean:
+	-rm -f $(BUILDIR)/*.o

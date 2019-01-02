@@ -1,0 +1,1 @@
+In kmeans.c change "nloops=1" to "nloops=30" in order to increase the execution time.

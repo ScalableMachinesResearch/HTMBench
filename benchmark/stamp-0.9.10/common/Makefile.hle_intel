@@ -1,0 +1,43 @@
+# ==============================================================================
+#
+# Makefile.hle_intel
+#
+# ==============================================================================
+# Copyright (c) IBM Corp. 2014, and others.
+
+CFLAGS += -DHLE_INTEL
+# CFLAGS += -mrtm		# x86_64 GCC
+# CFLAGS += -mhtm		# PPC GCC
+#LDFLAGS += -static
+
+SRCS += $(LIB)/hle_intel.c
+
+OBJS := ${SRCS:.c=.o}
+
+# ==============================================================================
+# Rules
+# ==============================================================================
+
+.PHONY: default
+default: $(PROG).hle_intel
+
+.PHONY: clean cleanobj
+clean:
+	$(RM) $(OBJS) $(PROG).hle_intel $(OUTPUT)
+
+cleanobj:
+	$(RM) $(OBJS) $(OUTPUT)
+
+$(PROG).hle_intel: $(OBJS)
+	$(LD) $(LDFLAGS) $^ $(LIBS) -o $(PROG).hle_intel
+
+include ../common/Makefile.common
+
+PROGRAM := ./$(PROG).hle_intel
+
+# ==============================================================================
+#
+# Makefile.seq
+#
+# ==============================================================================
+

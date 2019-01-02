@@ -1,0 +1,46 @@
+# ==============================================================================
+#
+# Makefile.htm_ibm
+#
+# ==============================================================================
+# Copyright (c) IBM Corp. 2014, and others.
+
+hostname := $(shell hostname)
+
+CFLAGS += -DHTM_IBM -DRTM # -DUSE_MUTEX
+# CFLAGS += -mrtm		# x86_64 GCC
+# CFLAGS += -mhtm		# PPC GCC
+#LDFLAGS += -static
+CFLAGS += -I${TSX_ROOT}/lib/rtm-stamp
+LIBS += -Wl,-rpath=${TSX_ROOT}/lib/rtm-stamp -L${TSX_ROOT}/lib/rtm-stamp -lrtm
+#SRCS += ${TSX_ROOT}/lib/htm_ibm.c \
+#     ${TSX_ROOT}/lib/htm_util.c
+
+OBJS := ${SRCS:.c=.o}
+
+# ==============================================================================
+# Rules
+# ==============================================================================
+
+.PHONY: default
+default: $(PROG).htm_ibm
+
+.PHONY: clean cleanobj
+clean:
+	$(RM) $(OBJS) $(PROG).htm_ibm $(OUTPUT)
+
+cleanobj:
+	$(RM) $(OBJS) $(OUTPUT)
+
+$(PROG).htm_ibm: $(OBJS)
+	$(LD) $(LDFLAGS) $^ $(LIBS) -o $(PROG).htm_ibm
+
+include ../common/Makefile.common
+
+PROGRAM := ./$(PROG).htm_ibm
+
+# ==============================================================================
+#
+# Makefile.seq
+#
+# ==============================================================================

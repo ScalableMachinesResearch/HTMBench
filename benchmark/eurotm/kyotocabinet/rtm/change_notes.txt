@@ -1,0 +1,20 @@
+In kcthread.h and kcthread.cc
+1. Add the header tm.h
+2. Delete the class ScopedSpinLock
+3. Modify the class Mutex
+4. Modify the class CondVar. Only spin waiting.
+5. Delete the struct CondVarCore
+6. Modify the class SlottedMutex
+7. Delete the struct SlottedMutexCore
+8. Modify the class SpinLock
+9. Modify the class SlottedSpinLock
+10. Delete the struct SlottedSpinLockCore
+11. Modify the class RWLock
+12. Modify the SlottedRWLock
+13. Delete the struct SlottedRWLockCore
+14. Delete the struct SpinRWLockCore
+15. Delete the functions spinrwlocklock and spinrwlockunlock
+16. Modify the class SpinRWLock
+17. Delete struct SlottedSpinRWLockCore
+18. Delete the functions slottedspinrwlocklock and slottedspinrwlockunlock
+19. Modify the class SlottedSpinRWLock

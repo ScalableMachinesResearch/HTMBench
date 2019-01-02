@@ -1,0 +1,6 @@
+[information]
+exe: build_rtm/ssca2
+shown_name: stamp-ssca2
+arguments: "-s22 -i1.0 -u1.0 -l3 -p3 -t$THREADS$"
+
+[environment]

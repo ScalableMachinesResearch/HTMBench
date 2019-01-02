@@ -1,0 +1,29 @@
+The original version uses tinySTM.
+We adopted it into HTM as follows:
+1. Delete the file tm_spec.h
+2. Change the place where tm_read_word()
+e.g.
+int get_val(){
+  return (int)tm_read_word((void *)&m_val);
+}
+|||||||
+int get_val(){
+  int ret_val;
+  TM_BEGIN();
+  ret_val = m_val;
+  TM_END();
+  return ret_val;
+}
+
+3. Merge tm_read_word() tm_write_word()
+
+4. stm_start() -> TM_BEGIN(); stm_commit -> TM_END(); remove their parameters accordingly.
+
+5. Remove any counting for aborts and commits
+
+6. Add TM_SHUTDOWN(); stm_init() -> TM_STARTUP()
+
+
+7. For printf("grid: %d\n", (int)grid); comment out this one since it causes erros
+
+8. In create_private_buffer(), change type in inside malloc to avoid seg fault

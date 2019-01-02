@@ -1,0 +1,6 @@
+[information]
+exe: nufft
+shown_name: bart-nufft
+arguments: "data/traj.ra data/shepplogan.ra data/shepplogan_ksp2.ra"
+
+[environment]

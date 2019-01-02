@@ -1,0 +1,6 @@
+[information]
+exe: scalparc 
+shown_name: rms-tm-scalparc
+arguments: "inputs/para_F26-A64-D250K/F26-A64-D250K.tab 8000000 64 2 $THREADS$"
+
+[environment]

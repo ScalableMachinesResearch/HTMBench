@@ -1,0 +1,9 @@
+[information]
+exe: build_rtm_small/clomp
+shown_name: clomp_small_rare_conflicts_hardprefetch
+arguments: "$THREADS$ 1 x32 d6144 256 Random 3 1 0 6 1000 60"
+parallel: omp
+
+[environment]
+GOMP_SPINCOUNT: 100000
+

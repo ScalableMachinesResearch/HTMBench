@@ -1,0 +1,4 @@
+[information]
+exe: build_rtm/dedup 
+shown_name: dedup
+arguments: "-c -p -f -r 1 -t 4 -i $TSX_INPUT$/parsec-2.1/pkgs/kernels/dedup/inputs/FC-6-x86_64-disc1.iso -o output.dat.ddp"

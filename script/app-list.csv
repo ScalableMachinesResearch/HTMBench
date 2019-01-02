@@ -1,0 +1,42 @@
+name,compile_path,compile_command,run_path,run_file
+avl,avl_tree,make rtm-naive,avl_tree,avl_0.0_naive.run
+genome,stamp-0.9.10/genome,make rtm,stamp-0.9.10/genome,default.run
+intruder,stamp-0.9.10/intruder,make rtm,stamp-0.9.10/intruder,default.run
+kmeans_high,stamp-0.9.10/kmeans,make rtm,stamp-0.9.10/kmeans,high.run
+kmeans_low,stamp-0.9.10/kmeans,make rtm,stamp-0.9.10/kmeans,low.run
+labyrinth,stamp-0.9.10/labyrinth,make rtm,stamp-0.9.10/labyrinth,default.run
+ssca(stamp),stamp-0.9.10/ssca2,make rtm,stamp-0.9.10/ssca2,default.run
+vacation_high,stamp-0.9.10/vacation,make rtm,stamp-0.9.10/vacation,high.run
+vacation_low,stamp-0.9.10/vacation,make rtm,stamp-0.9.10/vacation,low.run
+yada,stamp-0.9.10/yada,make rtm,stamp-0.9.10/yada,default.run
+clomp_s1,clomp,make,clomp,run/rare_conflicts_measure_small.run
+clomp_s2,clomp,make,clomp,run/high_conflicts_measure_small.run
+clomp_s3,clomp,make,clomp,run/rare_conflicts_hardprefetch_measure.run
+clomp_l1,clomp,make,clomp,run/rare_conflicts_measure_large.run
+clomp_l2,clomp,make,clomp,run/high_conflicts_measure_large.run
+clomp_l3,clomp,make,clomp,run/capacity_large_measure.run
+histo,parboil/histo,make rtm_naive,parboil/histo,default.run
+dedup,parsec-2.1/pkgs/kernels/dedup,make rtm,parsec-2.1/pkgs/kernels/dedup,default.run
+ua,NPB3.3-OMP-C/UA,make rtm,NPB3.3-OMP-C/UA,default.run
+Memcached,memcached-set,make,memcached-set,default.run
+linkedlist,synchrobench,make,synchrobench,run/linkedlist.run
+skiplist,synchrobench,make,synchrobench,run/skiplist.run
+QuakeTM,QuakeTM_1.0_Beta,make,QuakeTM_1.0_Beta,default.run
+SSCA2,SSCA2v2.2,make origin,SSCA2v2.2,default.run
+LevelDB,leveldb-tsx/origin,make,leveldb-tsx/origin,default.run
+Lee-TM,eurotm/lee,make,eurotm/lee,default.run
+netdedup,parsec-3.0/pkgs/netapps/netdedup,make build,parsec-3.0/pkgs/netapps/netdedup,default.run
+netferret,parsec-3.0/pkgs/netapps/netferret,make,parsec-3.0/pkgs/netapps/netferret,default.run
+netstreamcluster,parsec-3.0/pkgs/netapps/netstreamcluster,make,parsec-3.0/pkgs/netapps/netstreamcluster,default.run
+kyotocabinet,eurotm/kyotocabinet/rtm,./compile.sh rtm,eurotm/kyotocabinet/rtm,default.run
+ScalParC,eurotm/RMS-TM/ScalParC,make,eurotm/RMS-TM/ScalParC,default.run
+UtilityMine,eurotm/RMS-TM/UtilityMine,make,eurotm/RMS-TM/UtilityMine,default.run
+bart-nufft,bart,./compile.sh rtm,bart,default.run
+bplus-tree,bplus-tree,./compile.sh rtm,bplus-tree,default.run
+BerkeleyDB,berkely-db,./compile.sh rtm,berkely-db/bench,default.run
+barnes,splash2/codes/apps/barnes,make,splash2/codes/apps/barnes,default.run
+fmm,splash2/codes/apps/fmm,make,splash2/codes/apps/fmm,default.run
+pbzip2,pbzip2-1.1.13,make rtm,pbzip2-1.1.13,default.run
+ocean,splash2/codes/apps/ocean/contiguous_partitions,make,splash2/codes/apps/ocean/contiguous_partitions,default.run
+raytrace,splash2/codes/apps/raytrace,make,splash2/codes/apps/raytrace,default.run
+water,splash2/codes/apps/water-nsquared,make,splash2/codes/apps/water-nsquared,default.run

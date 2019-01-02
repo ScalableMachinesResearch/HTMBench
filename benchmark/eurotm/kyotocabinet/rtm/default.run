@@ -1,0 +1,8 @@
+[information]
+exe: kcforesttest
+shown_name: kyotocabinet-kcforesttest
+arguments: "queue -th 14 -it 2 -bnum 10000 -psiz 1000 casket 2000"
+parallel: pthread
+
+[environment]
+

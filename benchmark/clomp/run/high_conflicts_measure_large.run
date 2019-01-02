@@ -1,0 +1,9 @@
+[information]
+exe: build_rtm_large/clomp
+shown_name: clomp_high_conflicts_large
+arguments: "$THREADS$ 1 x32 d6144 256 firstParts 3 1 0 6 1000 25"
+parallel: omp
+
+[environment]
+GOMP_SPINCOUNT: 100000
+

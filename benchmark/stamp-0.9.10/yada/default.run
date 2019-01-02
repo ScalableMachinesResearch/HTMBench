@@ -1,0 +1,6 @@
+[information]
+exe: build_rtm/yada
+shown_name: stamp-yada
+arguments: "-a25 -i $TSX_INPUT$/stamp/yada/ttimeu1000000.2 -t$THREADS$"
+
+[environment]

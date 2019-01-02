@@ -1,0 +1,7 @@
+[information]
+exe: utility_mine 
+shown_name: rms-tm-utility_mine
+arguments: "inputs/GEN/data.ntrans_2000.tlen_20.nitems_1.patlen_6 inputs/GEN/offset_2000_20_1/offset_2000_20_1_6_P4.txt inputs/GEN/logn2000_binary 0.01 4"
+parallel: omp
+
+[environment]

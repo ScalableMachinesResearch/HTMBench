@@ -1,0 +1,5 @@
+[information]
+exe: build_rtm/pbzip2
+shown_name: pbzip2
+arguments: "-k -f -p$THREADS$ $TSX_INPUT$/pbzip2/test50Gb.db"
+

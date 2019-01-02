@@ -1,0 +1,7 @@
+[information]
+exe: FMM 
+shown_name: splash2-fmm
+launch_script: "run-hpc.sh"
+arguments: ""
+
+[environment]

@@ -1,0 +1,8 @@
+[information]
+exe: build_rtm_txn/histo
+shown_name: parboil-histo-rtm-naive
+arguments: "7000 -i $TSX_INPUT$/parboil/histo/large/input/img.bin"
+
+[environment]
+TXN_GRAN: 10000
+

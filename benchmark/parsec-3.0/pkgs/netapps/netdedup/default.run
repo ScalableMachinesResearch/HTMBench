@@ -1,0 +1,7 @@
+[information]
+exe: inst/linux-rtm.gcc-pthreads/bin/netdedup 
+shown_name: parsec3-netdedup
+launch_script: "run-hpc.sh 3 native"
+arguments: ""
+
+[environment]

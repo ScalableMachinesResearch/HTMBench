@@ -1,0 +1,85 @@
+----------------------------------------------------------------------------
+EXECUTION:
+----------------------------------------------------------------------------
+
+NOTE: for any application, just typing the application name without any command
+line options would list the actual command line options that are available to the
+user. For all TM applications, the supplied command lines use 4 processors for execution 
+with different sizes of datasets. 
+
+NOTE: To generate simple transactional statistics to understand the performance characteristics of 
+TM applications, set the environment variable "ITM_STATISTICS" (recommended option "verbose") using 
+one of environment variable setting options which are defined 
+in Intel® C++ STM Compiler Prototype Edition 2.0 Language Extensions and User’s Guide. 
+
+---------------------------------------------------------------------------------
+                                        Apriori
+---------------------------------------------------------------------------------
+
+---------------------------
+with Small dataset
+---------------------------
+$DMHOME/src/MineBench/Apriori/no_output_apriori -i $DMHOME/datasets/APR/data.ntrans_1000.tlen_10.nitems_1.npats_2000.patlen_6 -f $DMHOME/datasets/APR/offset_file_1000_10_1_P4.txt -s 0.0075 -n 4
+
+---------------------------
+with Medium dataset
+---------------------------
+$DMHOME/src/MineBench/Apriori/no_output_apriori -i $DMHOME/datasets/APR/data.ntrans_2000.tlen_20.nitems_1.npats_2000.patlen_6 -f $DMHOME/datasets/APR/offset_file_2000_20_1_P4.txt -s 0.0075 -n 4
+
+---------------------------
+with Large dataset
+---------------------------
+$DMHOME/src/MineBench/Apriori/no_output_apriori -i $DMHOME/datasets/APR/data.ntrans_4000.tlen_20.nitems_1.npats_2000.patlen_6 -f $DMHOME/datasets/APR/offset_file_4000_20_1_P4.txt -s 0.0075 -n 4 
+
+
+---------------------------------------------------------------------------------
+				        ScalParC
+---------------------------------------------------------------------------------
+
+---------------------------
+with Small dataset
+---------------------------
+$DMHOME/src/MineBench/ScalParC/scalparc $DMHOME/datasets/ScalParC/para_F26-A32-D125K/F26-A32-D250K.tab 250000 32 2 4
+
+---------------------------
+with Medium dataset
+---------------------------
+$DMHOME/src/MineBench/ScalParC/scalparc $DMHOME/datasets/ScalParC/para_F26-A32-D250K/F26-A32-D250K.tab 250000 32 2 4
+
+---------------------------
+with Large dataset
+---------------------------
+$DMHOME/src/MineBench/ScalParC/scalparc $DMHOME/datasets/ScalParC/para_F26-A64-D250K/F26-A64-D250K.tab 250000 64 2 4
+
+
+---------------------------------------------------------------------------------
+					  Utility-Mine
+---------------------------------------------------------------------------------
+
+---------------------------
+with Real dataset
+---------------------------
+$DMHOME/src/MineBench/UtilityMine/utility_mine $DMHOME/datasets/utility_mine/RealData/real_data_aa_binary $DMHOME/datasets/utility_mine/RealData/real_data_aa_binary_P4.txt $DMHOME/datasets/utility_mine/RealData/product_price_binary 0.01 4
+
+---------------------------
+with Synthetic dataset (Small)
+---------------------------
+$DMHOME/src/MineBench/UtilityMine/utility_mine $DMHOME/datasets/utility_mine/GEN/data.ntrans_1000.tlen_10.nitems_1.patlen_6 $DMHOME/datasets/utility_mine/GEN/offset_1000_10_1/offset_1000_10_1_6_P4.txt $DMHOME/datasets/utility_mine/GEN/logn1000_binary 0.01 4
+
+---------------------------
+with Synthetic dataset (Medium)
+---------------------------
+$DMHOME/src/MineBench/UtilityMine/utility_mine $DMHOME/datasets/utility_mine/GEN/data.ntrans_2000.tlen_20.nitems_1.patlen_6 $DMHOME/datasets/utility_mine/GEN/offset_2000_20_1/offset_2000_20_1_6_P4.txt $DMHOME/datasets/utility_mine/GEN/logn2000_binary 0.01 4
+
+
+
+
+
+
+
+
+
+
+
+
+

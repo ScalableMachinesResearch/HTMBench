@@ -1,0 +1,9 @@
+[information]
+exe: SSCA2-origin
+shown_name: SSCA2
+arguments: "$THREADS$ 19"
+
+[environment]
+TXN_GRAN_1: 3
+TXN_GRAN_2: 8
+

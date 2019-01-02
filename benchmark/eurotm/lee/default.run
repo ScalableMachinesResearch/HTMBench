@@ -1,0 +1,7 @@
+[information]
+exe: lee
+shown_name: lee
+arguments: "-f inputs/mainboard.txt -t $THREADS$"
+parallel: pthread
+
+[environment]

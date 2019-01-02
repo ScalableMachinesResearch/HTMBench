@@ -1,0 +1,6 @@
+[information]
+exe: build_rtm/kmeans
+shown_name: stamp-kmeans_low
+arguments: "-m40 -n40 -t0.00001 -i $TSX_INPUT$/stamp/kmeans/random-n65536-d32-c16.txt -p$THREADS$"
+
+[environment]
